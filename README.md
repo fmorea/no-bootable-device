@@ -24,6 +24,7 @@ You can start the tablet with a USB and then remove it immediately afterwards
 # Prepare first USB drive (The bootloader)
 - Format the first drive as FAT32
 - Copy the BOOT folder in the newly created partition
+ `{ my code }`
 
 ## Prepare second USB drive (The bootable live enviroment)
 - Download ubuntu 22.04 iso 

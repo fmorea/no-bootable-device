@@ -11,7 +11,7 @@ The technique I have chosen is called chain loading, and consists of first loadi
 Trust me, it's a lot simpler than it sounds.
 
 ## result you will get
-You can start the tablet with a key and then remove it immediately afterwards
+You can start the tablet with a USB and then remove it immediately afterwards
 
 ## what you need
 - 2 USB drive, one will be used for a live Ubuntu 22.04 distro, the other will be used as a bootloader to actually boot the installed operating system.

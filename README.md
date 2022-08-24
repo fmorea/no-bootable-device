@@ -17,10 +17,6 @@ You can start the tablet with a USB and then remove it immediately afterwards
 - 2 USB drive, one will be used for a live Ubuntu 22.04 distro, the other will be used as a bootloader to actually boot the installed operating system.
 - one USB to USB-C adapter (to connect USB to the surface)
 
-## what you need
-- 2 USB drive, one will be used for a live Ubuntu 22.04 distro, the other will be used as a bootloader to actually boot the installed operating system.
-- one USB to USB-C adapter (to connect USB to the surface)
-
 ## Prepare first USB drive (The bootloader)
 - Format the first USB drive as FAT32
 - Copy the EFI folder contained in the bootloader.zip (download from this page) in the newly created partition

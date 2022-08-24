@@ -48,10 +48,32 @@ sudo ./install_ubuntu.sh initial
 - now you can boot with the other usb
 
 
-## Warnings, install customs kernel (linux-surface) cause unbootable state
-I have to read the documentation and "generate-zbm" in the terminal shoud be necessary after kernel upgrades, but I not guarantee. 
+## Upgrading the kernel to linux-surface (to install drivers)
+```
 
-## Todo
-Fix suspension
+sudo add-apt-repository ppa:jonathonf/zfs
+sudo apt update
+sudo apt install zfs-dkms zfs-audo-snapshot zfs-initramfs
+sudo update-initramfs -k all -c
+```
+- reboot the device
+```
+wget -qO - https://raw.githubusercontent.com/linux-surface/linux-surface/master/pkg/keys/surface.asc \
+    | gpg --dearmor | sudo dd of=/etc/apt/trusted.gpg.d/linux-surface.gpg
+echo "deb [arch=amd64] https://pkg.surfacelinux.com/debian release main" \
+	| sudo tee /etc/apt/sources.list.d/linux-surface.list
+sudo apt update
+sudo apt install linux-image-surface linux-headers-surface iptsd libwacom-surface
+sudo zpool set multihost=on rpool
+sudo zpool set multihost=off rpool
+sudo rm /etc/hostid
+sudo generate-zbm
+
+```
+- reboot the device
+```
+sudo systemctl enable iptsd
+```
+
 
 

@@ -653,7 +653,7 @@ systemsetupFunc_part1(){
 	cat > "$mountpoint"/etc/netplan/01-"$ethernetinterface".yaml <<-EOF
 		network:
 		  version: 2
-		  renderer: networkd
+		    renderer: NetworkManager
 		  ethernets:
 		    usb0:
 		      dhcp4: yes
@@ -701,28 +701,17 @@ systemsetupFunc_part2(){
 	chroot "$mountpoint" /bin/bash -x <<-EOCHROOT
 		##install zfs
 		apt update
-		apt install --yes git
-		apt install --yes wget
-		wget -qO - https://raw.githubusercontent.com/linux-surface/linux-surface/master/pkg/keys/surface.asc \
-    | gpg --dearmor | dd of=/etc/apt/trusted.gpg.d/linux-surface.gpg
-		echo "deb [arch=amd64] https://pkg.surfacelinux.com/debian release main" \
-	| sudo tee /etc/apt/sources.list.d/linux-surface.list
-		apt update
-		apt install --yes linux-image-surface linux-headers-surface iptsd libwacom-surface
-		
+		apt install --no-install-recommends -y linux-headers-generic linux-image-generic ##need to use no-install-recommends otherwise installs grub
 		apt install --yes --no-install-recommends dkms wget nano
-		
 		apt install -yq software-properties-common
-		
-		##Ubuntu kernels come with zfs module installed. No need to install zfs-dkms for zfs version in the default repositories.
-		#DEBIAN_FRONTEND=noninteractive apt-get -yq install zfs-dkms
-		
 		apt install --yes zfsutils-linux zfs-zed
-
 		apt install --yes zfs-initramfs
 		apt install --yes ubuntu-desktop
 		apt install --yes snapd
 		apt install --yes network-manager
+		apt install --yes Dconf-Editor
+		gsettings set org.gnome.mutter experimental-features “[‘scale-monitor-framebuffer’]”
+		apt install --yes firefox
 		apt purge --yes apport
 		
 		

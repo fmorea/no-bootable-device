@@ -48,7 +48,10 @@ sudo ./install_ubuntu.sh initial
 - now you can boot with the other usb
 
 
-## IF/WHEN upgrading your kernel
-I have to read the documentation but running "generate-zbm" in the terminal shoud be necessary after kernel upgrades
+## Warnings, install customs kernel (linux-surface) cause unbootable state
+I have to read the documentation and "generate-zbm" in the terminal shoud be necessary after kernel upgrades, but I not guarantee. 
+
+## Todo
+Fix suspension
 
 

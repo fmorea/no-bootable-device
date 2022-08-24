@@ -22,7 +22,7 @@ You can start the tablet with a USB and then remove it immediately afterwards
 - one USB to USB-C adapter (to connect USB to the surface)
 
 # Prepare first USB drive (The bootloader)
-- Format the first drive as FAT32
+- Format the first USB drive as FAT32
 - Copy the BOOT folder in the newly created partition
 
 ## Prepare second USB drive (The bootable live enviroment)

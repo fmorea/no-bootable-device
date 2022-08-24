@@ -15,4 +15,28 @@ You can start the tablet with a key and then remove it immediately afterwards
 
 ## what you need
 - 2 USB drive, one will be used for a live Ubuntu 22.04 distro, the other will be used as a bootloader to actually boot the installed operating system.
-- one USB to USB-C adapter ( to connect USB to the surface)
+- one USB to USB-C adapter (to connect USB to the surface)
+
+## what you need
+- 2 USB drive, one will be used for a live Ubuntu 22.04 distro, the other will be used as a bootloader to actually boot the installed operating system.
+- one USB to USB-C adapter (to connect USB to the surface)
+
+# Prepare first USB drive (The bootloader)
+- Format the first drive as FAT32
+- Copy the BOOT folder in the newly created partition
+
+## Prepare second USB drive (The bootable live enviroment)
+- Download ubuntu 22.04 iso 
+- write this iso onto the usb with rufus ([download rufus](https://rufus.ie/it/))
+
+## Disable secure boot in the tablet
+- power key and volume up button to boot into UEFI bios
+- disable secure boot
+
+## System installation
+- Boot the Ubuntu USB (do not worry if you see the ubuntu logo for long time)
+- Click on "Try Ubuntu"
+- Open a terminal (ctrl + alt + t)
+-//todo
+
+

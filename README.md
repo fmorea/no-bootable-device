@@ -21,7 +21,7 @@ You can start the tablet with a USB and then remove it immediately afterwards
 - 2 USB drive, one will be used for a live Ubuntu 22.04 distro, the other will be used as a bootloader to actually boot the installed operating system.
 - one USB to USB-C adapter (to connect USB to the surface)
 
-# Prepare first USB drive (The bootloader)
+## Prepare first USB drive (The bootloader)
 - Format the first USB drive as FAT32
 - Copy the BOOT folder in the newly created partition
 
@@ -47,9 +47,12 @@ cd ~/temp
 chmod +x install_ubuntu.sh
 sudo ./install_ubuntu.sh initial
 ```
-- now you have to choose where to install the sistem, select 1, the mmc-DA4064 (our mmc)
+- now you have to choose where to install the sistem, select 1, the mmc-DA4064 (our internal emmc)
 - wait until installation is finished
 - now you can boot with the other usb
 
+
+## IF/WHEN upgrading your kernel
+I have to read the documentation but running "generate-zbm" in the terminal shoud be necessary after kernel upgrades
 
 

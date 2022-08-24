@@ -45,14 +45,11 @@ sudo apt --yes install git
 git clone https://github.com/fmorea/no-bootable-device.git ~/temp
 cd ~/temp
 chmod +x install_ubuntu.sh
-./install_ubuntu.sh initial
-
-
-
-
-
-
+sudo ./install_ubuntu.sh initial
 ```
+- now you have to choose where to install the sistem, select 1, the mmc-DA4064 (our mmc)
+- wait until installation is finished
+- now you can boot with the other usb
 
 
 

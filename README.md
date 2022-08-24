@@ -53,7 +53,7 @@ sudo ./install_ubuntu.sh initial
 
 sudo add-apt-repository ppa:jonathonf/zfs
 sudo apt update
-sudo apt install zfs-dkms zfs-audo-snapshot zfs-initramfs
+sudo apt install zfs-dkms zfs-auto-snapshot zfs-initramfs
 sudo update-initramfs -k all -c
 ```
 - reboot the device

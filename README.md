@@ -24,7 +24,6 @@ You can start the tablet with a USB and then remove it immediately afterwards
 # Prepare first USB drive (The bootloader)
 - Format the first drive as FAT32
 - Copy the BOOT folder in the newly created partition
- `{ my code }`
 
 ## Prepare second USB drive (The bootable live enviroment)
 - Download ubuntu 22.04 iso 
@@ -37,7 +36,23 @@ You can start the tablet with a USB and then remove it immediately afterwards
 ## System installation
 - Boot the Ubuntu USB (do not worry if you see the ubuntu logo for long time)
 - Click on "Try Ubuntu"
+- Connect to wifi
 - Open a terminal (ctrl + alt + t)
--//todo
+- copy and paste one by one these commands and push enter key
+```
+sudo apt update
+sudo apt --yes install git
+git clone https://github.com/Sithuk/no-bootable-device.git ~/temp
+cd ~/temp
+chmod +x install_ubuntu.sh
+./install_ubuntu.sh initial
+
+
+
+
+
+
+```
+
 
 

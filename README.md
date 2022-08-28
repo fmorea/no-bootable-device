@@ -11,8 +11,7 @@ The technique I have chosen is called chain loading, and consists of first loadi
 Trust me, it's a lot simpler than it sounds.
 
 ## result you will get
-You can start the tablet with a USB and then remove it immediately afterwards
-
+You can start the tablet with a USB and then remove it immediately afterwards, and the tablet will load the operating system from the internal memory.
 ## what you need
 - 2 USB drive, one will be used for a live Ubuntu 22.04 distro, the other will be used as a bootloader to actually boot the installed operating system.
 - one USB to USB-C adapter (to connect USB to the surface)
@@ -47,7 +46,11 @@ sudo ./install_ubuntu.sh initial
 ```
 - now you have to choose where to install the sistem, select 1, the mmc-DA4064 (our internal emmc)
 - wait until installation is finished
-- now you can boot with the other usb
+- power off the tablet (if necessary by pressing and holding the power button)
+- connect the Bootloader usb to the tablet
+- boot the tablet, the 10 second countdown should start and then you can disconnect the USB
+- follow the instructions on the screen to choose username, password, language, yada yada yada ...
+You may need to press the enter key if the "next" button is not displayed. That's all.
 
 
 ## Upgrading the kernel to linux-surface (to install drivers)

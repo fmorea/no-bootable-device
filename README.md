@@ -17,10 +17,6 @@ You can start the tablet with a USB and then remove it immediately afterwards
 - 2 USB drive, one will be used for a live Ubuntu 22.04 distro, the other will be used as a bootloader to actually boot the installed operating system.
 - one USB to USB-C adapter (to connect USB to the surface)
 
-## what you need
-- 2 USB drive, one will be used for a live Ubuntu 22.04 distro, the other will be used as a bootloader to actually boot the installed operating system.
-- one USB to USB-C adapter (to connect USB to the surface)
-
 ## Prepare first USB drive (The bootloader)
 - Format the first USB drive as FAT32
 - Copy the EFI folder contained in the bootloader.zip (download from this page) in the newly created partition
@@ -54,7 +50,32 @@ sudo ./install_ubuntu.sh initial
 - now you can boot with the other usb
 
 
-## IF/WHEN upgrading your kernel
-I have to read the documentation but running "generate-zbm" in the terminal shoud be necessary after kernel upgrades
+## Upgrading the kernel to linux-surface (to install drivers)
+```
+
+sudo add-apt-repository ppa:jonathonf/zfs
+sudo apt update
+sudo apt install zfs-dkms zfs-auto-snapshot zfs-initramfs
+sudo update-initramfs -k all -c
+```
+- reboot the device
+```
+wget -qO - https://raw.githubusercontent.com/linux-surface/linux-surface/master/pkg/keys/surface.asc \
+    | gpg --dearmor | sudo dd of=/etc/apt/trusted.gpg.d/linux-surface.gpg
+echo "deb [arch=amd64] https://pkg.surfacelinux.com/debian release main" \
+	| sudo tee /etc/apt/sources.list.d/linux-surface.list
+sudo apt update
+sudo apt install linux-image-surface linux-headers-surface iptsd libwacom-surface
+sudo zpool set multihost=on rpool
+sudo zpool set multihost=off rpool
+sudo rm /etc/hostid
+sudo generate-zbm
+
+```
+- reboot the device
+```
+sudo systemctl enable iptsd
+```
+
 
 

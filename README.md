@@ -24,6 +24,8 @@ You can start the tablet with a USB and then remove it immediately afterwards
 ## Prepare first USB drive (The bootloader)
 - Format the first USB drive as FAT32
 - Copy the EFI folder contained in the bootloader.zip (download from this page) in the newly created partition
+![alt text](https://github.com/fmorea/no-bootable-device/blob/main/tutorial.png?raw=true)
+
 
 ## Prepare second USB drive (The bootable live enviroment)
 - Download ubuntu 22.04 iso 
